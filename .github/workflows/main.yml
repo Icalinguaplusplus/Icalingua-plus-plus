@@ -203,7 +203,7 @@ jobs:
             chmod -R 777 /build
             cd /build
             useradd -m builduser
-            su builduser -c 'yarn build:electron install-app-deps --force-process-config'
+            su builduser -c 'yarn build:electron install-app-deps'
 
       - name: build
         run: yarn build:electron --arm64 --dir -c.extraMetadata.version=${{ needs.build-dist-bundle.outputs.version }}
