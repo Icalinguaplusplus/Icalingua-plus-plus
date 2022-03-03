@@ -197,9 +197,10 @@ jobs:
           dockerRunArgs: |
             --volume "${PWD}/icalingua:/build"
           install: |
-            pacman -Sy --noconfirm nvm yarn python2 python base-devel glibc
+            yay -S --noconfirm nvm
             source /usr/share/nvm/init-nvm.sh
             nvm install 14
+            pacman -Sy --noconfirm yarn python2 python base-devel glibc
           run: |
             nvm use 14
             uname -a
