@@ -197,7 +197,7 @@ jobs:
           dockerRunArgs: |
             --volume "${PWD}/icalingua:/build"
           install: |
-            pacman -Sy --noconfirm yarn python2 python base-devel
+            pacman -Sy --noconfirm yarn python2 python base-devel gcc-multilib g++-multilib glibc
           run: |
             uname -a
             chmod -R 777 /build
