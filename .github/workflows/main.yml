@@ -197,13 +197,13 @@ jobs:
           dockerRunArgs: |
             --volume "${PWD}/icalingua:/build"
           install: |
-            pacman -Sy --noconfirm nodejs-lts-fermium yarn python2 python base-devel glibc curl
+            pacman -Sy --noconfirm yarn python2 python base-devel glibc
           run: |
             uname -a
             chmod -R 777 /build
             cd /build
             useradd -m builduser
-            su builduser -c 'yarn build:electron install-app-deps'
+            su builduser -c 'yarn build:electron install-app-deps --force-process-config'
 
       - name: build
         run: yarn build:electron --arm64 --dir -c.extraMetadata.version=${{ needs.build-dist-bundle.outputs.version }}
