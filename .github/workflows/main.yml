@@ -199,7 +199,8 @@ jobs:
           install: |
             pacman -Sy --noconfirm yarn python2 python base-devel glibc curl
           run: |
-            curl -o- <https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh> | bash
+            curl -o- <https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh
+            bash ./install.sh
             nvm install 14
             nvm use 14
             uname -a
